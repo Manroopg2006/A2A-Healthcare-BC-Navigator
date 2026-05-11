@@ -21,6 +21,8 @@ import os
 
 from google.adk.agents import Agent
 from google.adk.models.lite_llm import LiteLlm
+from healthcare_agent.tools.rag_tool import search_bc_health_knowledge
+
 
 from shared.fhir_hook import extract_fhir_context
 from shared.tools import (
@@ -98,6 +100,7 @@ root_agent = Agent(
         get_active_medications,
         get_active_conditions,
         get_recent_observations,
+        search_bc_health_knowledge,
     ],
     # Runs before every LLM call.
     # Reads fhir_url, fhir_token, and patient_id from A2A message metadata
