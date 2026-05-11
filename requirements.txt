@@ -13,3 +13,6 @@ litellm==1.83.7
 
 # ASGI server
 uvicorn>=0.41.0
+
+# Vector database for RAG (used by healthcare_agent/tools/rag_tool.py)
+chromadb>=0.6.0
